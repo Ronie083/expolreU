@@ -13,7 +13,7 @@ const PopularClasses = () => {
             <Headings
             subHeading={"welcome to our summer camp"}
             heading={"Here is our Top Courses"}></Headings>
-            <div className="grid grid-cols-3 gap-4 justify-items-center mx-auto">
+            <div className="grid md:grid-cols-3 gap-4 justify-items-center mx-auto">
                 {popularClasses.map(classItem => (
                     <CardsView key={classItem.id}
                         name={classItem.name}

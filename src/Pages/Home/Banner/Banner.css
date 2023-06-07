@@ -37,13 +37,13 @@
 .swiper_container {
     height: 52rem;
     padding: 2rem 0;
-    position: relative;
+    /* position: relative; */
 }
 
 .swiper-slide {
     width: 37rem;
     height: 42rem;
-    position: relative;
+    /* position: relative; */
 }
 
 @media (max-width: 500px) {

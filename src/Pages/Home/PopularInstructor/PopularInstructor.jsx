@@ -12,7 +12,7 @@ const PopularInstructor = () => {
             <Headings
             subHeading={"here is our"}
             heading={"Top instructors"}></Headings>
-            <div className="grid grid-cols-3 gap-4 justify-items-center mb-20">
+            <div className="grid md:grid-cols-3 gap-4 justify-items-center mb-20">
                 {
                     popularIns.map(instructor => <CardsViewT key={instructor.id}
                     name={instructor.name}

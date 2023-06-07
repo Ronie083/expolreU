@@ -27,7 +27,11 @@ const CardsViewT = ({ image, name, email, numClassesTaken, classesTaken, numStud
             <div className={`card-body ${hovered ? 'hovered' : ''}`}>
                 <h2 className="card-title">
                     {name}
-                    <div className="badge badge-secondary uppercase">Popular</div>
+                    {
+                        numStudents > 50 && (
+                            <div className="badge badge-secondary uppercase">Popular</div>
+                        )
+                    }
                 </h2>
                 <div className="instructor-info">
                     <p>Instructor Email: {email};</p>

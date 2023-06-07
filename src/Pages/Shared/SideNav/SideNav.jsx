@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const SideNav = () => {
     return (
-        <ul className="menu bg-red-400 rounded-box fixed left-0 mt-72 top-0">
+        <ul className="menu bg-red-400 rounded-box fixed z-[1000] right-0 mt-72 top-0">
             <li>
                 <Link to="/">
-                    <a className="tooltip tooltip-right" data-tip="Home">
+                    <a className="tooltip tooltip-left" data-tip="Home">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -25,7 +25,7 @@ const SideNav = () => {
             </li>
             <li>
                 <Link to="instructors">
-                    <a className="tooltip tooltip-right" data-tip="Instructors">
+                    <a className="tooltip tooltip-left" data-tip="Instructors">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -45,7 +45,7 @@ const SideNav = () => {
             </li>
             <li>
                 <Link to= "classes">
-                    <a className="tooltip tooltip-right" data-tip="Classes">
+                    <a className="tooltip tooltip-left" data-tip="Classes">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"

@@ -30,7 +30,7 @@ const CardsView = ({ image, name, instructor, availableSeats, price, numberOfStu
                 </h2>
                 <div className="instructor-info">
                     <p>Instructor: {instructor}</p>
-                    <p>Number Of Students: {numberOfStudents}</p>
+                    <p className="my-3">Number Of Students: {numberOfStudents}</p>
                     <p>{details}</p>
                 </div>
                 <div className="card-actions justify-end">

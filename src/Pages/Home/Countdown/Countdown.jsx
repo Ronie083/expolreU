@@ -54,7 +54,7 @@ const Countdown = () => {
                 <p  style={{ fontFamily: 'Pacifico, cursive'}}>until first session</p>
                 <h1 className="text-3xl my-3">Don&apos;t Miss the First Day!</h1>
             </div>
-            <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
+            <div className="grid grid-cols-2 md:grid-flow-col gap-5 text-center auto-cols-max">
                 <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
                     <span className="countdown font-mono text-5xl">
                         <span style={{ "--value": countdown.days }}></span>

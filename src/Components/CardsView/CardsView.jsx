@@ -12,12 +12,14 @@ const CardsView = ({ image, name, instructor, availableSeats, price, numberOfStu
         setHovered(false);
     };
 
+    const cardClass = availableSeats === 0 ? "card no-seats" : "card";
+
     return (
         <div
-            className="card w-96 bg-base-100 shadow-xl my-10"
+            className={`${cardClass} w-96 bg-base-100 shadow-xl my-10`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-        >
+            >
             <div className="image-wrapper">
                 <figure style={{ height: '300px', overflow: 'hidden' }}>
                     <img src={image} alt="image" />
@@ -26,7 +28,11 @@ const CardsView = ({ image, name, instructor, availableSeats, price, numberOfStu
             <div className={`card-body ${hovered ? 'hovered' : ''}`}>
                 <h2 className="card-title">
                     {name}
-                    <div className="badge badge-secondary uppercase">Popular</div>
+                    {
+                        numberOfStudents > 16 && (
+                            <div className="badge badge-secondary uppercase">Popular</div>
+                        )
+                    }
                 </h2>
                 <div className="instructor-info">
                     <p>Instructor: {instructor}</p>
@@ -37,6 +43,13 @@ const CardsView = ({ image, name, instructor, availableSeats, price, numberOfStu
                     <div className="badge badge-outline">Price: ${price}</div>
                     <div className="badge badge-outline">Available Seats: {availableSeats}</div>
                 </div>
+            </div>
+            <div className="card-actions m-10">
+                {
+                    availableSeats > 0 && (
+                        <button className="btn btn-outline">Enroll</button>
+                    )
+                }
             </div>
         </div>
     );

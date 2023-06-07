@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "image": "class1.jpg",
+      "image": "https://images.unsplash.com/photo-1495121553079-4c61bcce1894?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=381&q=80",
       "name": "Introduction to Photography",
       "instructor": "John Smith",
       "availableSeats": 10,
@@ -41,7 +41,7 @@
     },
     {
       "id": 5,
-      "image": "class5.jpg",
+      "image": "https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
       "name": "Product Photography",
       "instructor": "David Wilson",
       "availableSeats": 4,
@@ -51,7 +51,7 @@
     },
     {
       "id": 6,
-      "image": "class6.jpg",
+      "image": "https://images.unsplash.com/photo-1619171983599-46420876cb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
       "name": "Wildlife Photography",
       "instructor": "Jessica Lee",
       "availableSeats": 10,
@@ -91,7 +91,7 @@
     },
     {
       "id": 10,
-      "image": "class10.jpg",
+      "image": "https://images.unsplash.com/photo-1598258500419-5d7895465a20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
       "name": "Travel Photography",
       "instructor": "Olivia Brown",
       "availableSeats": 4,
@@ -101,7 +101,7 @@
     },
     {
       "id": 11,
-      "image": "class11.jpg",
+      "image": "https://images.unsplash.com/photo-1624744969854-b53445f2e3f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
       "name": "Food Photography",
       "instructor": "William Garcia",
       "availableSeats": 8,

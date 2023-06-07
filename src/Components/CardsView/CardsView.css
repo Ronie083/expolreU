@@ -30,4 +30,8 @@
     width: 100%;
     height: auto;
   }
+
+  .card.no-seats {
+    background-color: red;
+  }
   

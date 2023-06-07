@@ -14,7 +14,7 @@ const NavBar = () => {
                         <a>MENU</a>
                         <ul className="p-2">
                             <li><Link to="instructors">Instructors</Link></li>
-                            <li><Link to="shop">Classes</Link></li>
+                            <li><Link to="classes">Classes</Link></li>
                         </ul>
                     </li>
                 </ul>
@@ -28,7 +28,7 @@ const NavBar = () => {
                 <ul className="menu uppercase menu-horizontal px-1">
                     <li><Link to="/">HOME</Link></li>
                     <li><Link to="instructors">Instructors</Link></li>
-                    <li><Link to="shop">Classes</Link></li>
+                    <li><Link to="classes">Classes</Link></li>
                 </ul>
             </div>
             <div className="flex-none">

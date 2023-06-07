@@ -7,21 +7,23 @@ const Instructors = () => {
 
     return (
         <div className="my-20">
-            <Headings subHeading="here is the all of" heading="Our Instructors" />
-                <div className="grid grid-cols-3 gap-5 justify-items-center">
-                    {instructors.map((instructor) => (
-                        <CardsViewT
-                            key={instructor.id}
-                            name={instructor.name}
-                            image={instructor.image}
-                            email={instructor.email}
-                            numClassesTaken={instructor.numClassesTaken}
-                            classesTaken={instructor.classesTaken}
-                            numStudents={instructor.numStudents}
-                            instructorQuotes={instructor.instructorQuotes}
-                        />
-                    ))}
-                </div>
+            <Headings
+                subHeading="here is the all of"
+                heading="Our Instructors" />
+            <div className="grid grid-cols-3 gap-5 justify-items-center">
+                {instructors.map((instructor) => (
+                    <CardsViewT
+                        key={instructor.id}
+                        name={instructor.name}
+                        image={instructor.image}
+                        email={instructor.email}
+                        numClassesTaken={instructor.numClassesTaken}
+                        classesTaken={instructor.classesTaken}
+                        numStudents={instructor.numStudents}
+                        instructorQuotes={instructor.instructorQuotes}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

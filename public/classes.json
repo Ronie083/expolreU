@@ -1,110 +1,123 @@
 [
     {
-        "id": 1,
-        "image": "class1.jpg",
-        "name": "Introduction to Photography",
-        "instructor": "John Smith",
-        "availableSeats": 10,
-        "price": 99.99,
-        "numberOfStudents": 15
+      "id": 1,
+      "image": "class1.jpg",
+      "name": "Introduction to Photography",
+      "instructor": "John Smith",
+      "availableSeats": 10,
+      "price": 99.99,
+      "numberOfStudents": 15,
+      "details": "Learn the basics of photography, including camera settings, composition, and exposure. Suitable for beginners."
     },
     {
-        "id": 2,
-        "image": "class2.jpg",
-        "name": "Portrait Photography",
-        "instructor": "Emily Johnson",
-        "availableSeats": 8,
-        "price": 129.99,
-        "numberOfStudents": 12
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1504389557830-b293439b92d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+      "name": "Portrait Photography",
+      "instructor": "Emily Johnson",
+      "availableSeats": 8,
+      "price": 129.99,
+      "numberOfStudents": 12,
+      "details": "Master the art of capturing stunning portraits, including lighting techniques and posing guidance."
     },
     {
-        "id": 3,
-        "image": "class3.jpg",
-        "name": "Landscape Photography",
-        "instructor": "Michael Anderson",
-        "availableSeats": 12,
-        "price": 149.99,
-        "numberOfStudents": 20
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1533577083121-c9bd0b0f32fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "name": "Landscape Photography",
+      "instructor": "Michael Anderson",
+      "availableSeats": 12,
+      "price": 149.99,
+      "numberOfStudents": 20,
+      "details": "Explore the beauty of landscapes and learn techniques to capture breathtaking scenic photographs."
     },
     {
-        "id": 4,
-        "image": "class4.jpg",
-        "name": "Street Photography",
-        "instructor": "Sara Roberts",
-        "availableSeats": 6,
-        "price": 89.99,
-        "numberOfStudents": 18
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1488034976201-ffbaa99cbf5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "name": "Street Photography",
+      "instructor": "Sara Roberts",
+      "availableSeats": 6,
+      "price": 89.99,
+      "numberOfStudents": 18,
+      "details": "Capture the essence of everyday life on the streets, documenting moments and telling stories through your photographs."
     },
     {
-        "id": 5,
-        "image": "class5.jpg",
-        "name": "Product Photography",
-        "instructor": "David Wilson",
-        "availableSeats": 4,
-        "price": 179.99,
-        "numberOfStudents": 14
+      "id": 5,
+      "image": "class5.jpg",
+      "name": "Product Photography",
+      "instructor": "David Wilson",
+      "availableSeats": 4,
+      "price": 179.99,
+      "numberOfStudents": 14,
+      "details": "Learn the techniques for capturing high-quality product images for e-commerce, advertising, and catalogs."
     },
     {
-        "id": 6,
-        "image": "class6.jpg",
-        "name": "Wildlife Photography",
-        "instructor": "Jessica Lee",
-        "availableSeats": 10,
-        "price": 199.99,
-        "numberOfStudents": 16
+      "id": 6,
+      "image": "class6.jpg",
+      "name": "Wildlife Photography",
+      "instructor": "Jessica Lee",
+      "availableSeats": 10,
+      "price": 199.99,
+      "numberOfStudents": 16,
+      "details": "Discover the skills and patience required to photograph wildlife in their natural habitats, capturing stunning moments."
     },
     {
-        "id": 7,
-        "image": "class7.jpg",
-        "name": "Night Photography",
-        "instructor": "Daniel Miller",
-        "availableSeats": 8,
-        "price": 129.99,
-        "numberOfStudents": 25
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1505464692225-0f81871946c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "name": "Night Photography",
+      "instructor": "Daniel Miller",
+      "availableSeats": 8,
+      "price": 129.99,
+      "numberOfStudents": 25,
+      "details": "Learn to capture stunning photographs in low-light and night-time conditions, mastering exposure and creative techniques."
     },
     {
-        "id": 8,
-        "image": "class8.jpg",
-        "name": "Fashion Photography",
-        "instructor": "Sophia Thompson",
-        "availableSeats": 12,
-        "price": 149.99,
-        "numberOfStudents": 30
+      "id": 8,
+      "image": "https://images.unsplash.com/photo-1627545705851-1ddf76be2149?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "name": "Fashion Photography",
+      "instructor": "Sophia Thompson",
+      "availableSeats": 12,
+      "price": 149.99,
+      "numberOfStudents": 30,
+      "details": "Learn the art of capturing fashion images, including working with models, posing, and creating captivating compositions."
     },
     {
-        "id": 9,
-        "image": "class9.jpg",
-        "name": "Black and White Photography",
-        "instructor": "Alexander Davis",
-        "availableSeats": 6,
-        "price": 99.99,
-        "numberOfStudents": 22
+      "id": 9,
+      "image": "https://images.unsplash.com/photo-1629223486621-56c80cded8b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=490&q=80",
+      "name": "Black and White Photography",
+      "instructor": "Alexander Davis",
+      "availableSeats": 6,
+      "price": 99.99,
+      "numberOfStudents": 22,
+      "details": "Explore the artistry of black and white photography, learning techniques for capturing timeless monochromatic images."
     },
     {
-        "id": 10,
-        "image": "class10.jpg",
-        "name": "Travel Photography",
-        "instructor": "Olivia Brown",
-        "availableSeats": 4,
-        "price": 179.99,
-        "numberOfStudents": 16
+      "id": 10,
+      "image": "class10.jpg",
+      "name": "Travel Photography",
+      "instructor": "Olivia Brown",
+      "availableSeats": 4,
+      "price": 179.99,
+      "numberOfStudents": 16,
+      "details": "Capture the essence of your travel adventures, learning to tell stories through your photographs and document new cultures."
     },
     {
-        "id": 11,
-        "image": "class11.jpg",
-        "name": "Food Photography",
-        "instructor": "William Garcia",
-        "availableSeats": 8,
-        "price": 129.99,
-        "numberOfStudents": 14
+      "id": 11,
+      "image": "class11.jpg",
+      "name": "Food Photography",
+      "instructor": "William Garcia",
+      "availableSeats": 8,
+      "price": 129.99,
+      "numberOfStudents": 14,
+      "details": "Master the art of food photography, including lighting, composition, and styling techniques to create appetizing images."
     },
     {
-        "id": 12,
-        "image": "class12.jpg",
-        "name": "Mobile Photography",
-        "instructor": "Ava Rodriguez",
-        "availableSeats": 10,
-        "price": 99.99,
-        "numberOfStudents": 18
+      "id": 12,
+      "image": "https://images.unsplash.com/photo-1612015670817-0127d21628d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+      "name": "Mobile Photography",
+      "instructor": "Ava Rodriguez",
+      "availableSeats": 10,
+      "price": 99.99,
+      "numberOfStudents": 18,
+      "details": "Learn to capture stunning photographs using your mobile phone, mastering composition, editing, and creative apps."
     }
-]
+  ]
+  

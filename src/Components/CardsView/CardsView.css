@@ -1,0 +1,32 @@
+.card-body {
+    transition: transform 0.3s ease;
+  }
+  
+  .card-body.hovered {
+    transform: translateY(-50%);
+  }
+  
+  .instructor-info {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .card-body.hovered .instructor-info {
+    display: block;
+  }
+  
+  .image-wrapper {
+    position: relative;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+  }
+  

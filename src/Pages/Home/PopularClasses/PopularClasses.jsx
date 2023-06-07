@@ -1,3 +1,4 @@
+import CardsView from "../../../Components/CardsView/CardsView";
 import useClasses from "../../../Hooks/useClasses";
 
 
@@ -7,18 +8,25 @@ const PopularClasses = () => {
     const popularClasses = classes.filter(popularClass => popularClass.numberOfStudents > 16);
 
     return (
-        <div>
-            classes
-            {popularClasses.map(classItem => (
-                <div key={classItem.id}>
-                    <img src={classItem.image} alt={classItem.name} />
-                    <h2>{classItem.name}</h2>
-                    <p>Instructor: {classItem.instructor}</p>
-                    <p>Available Seats: {classItem.availableSeats}</p>
-                    <p>Price: {classItem.price}</p>
-                    <p>Number of Students: {classItem.numberOfStudents}</p>
-                </div>
-            ))}
+        <div className="container mx-auto my-20">
+            <div className="font-bold text-center">
+                <p className="text-2xl" style={{ fontFamily: 'Pacifico, cursive' }}>welcome to our summer camp</p>
+                <h1 className="text-4xl my-3">Here is our Top Courses</h1>
+            </div>
+            <div className="grid grid-cols-3 gap-4 justify-items-center mx-auto">
+                {popularClasses.map(classItem => (
+                    <CardsView key={classItem.id}
+                        name={classItem.name}
+                        instructor={classItem.instructor}
+                        availableSeats={classItem.availableSeats}
+                        price={classItem.price}
+                        numberOfStudents={classItem.numberOfStudents}
+                        image={classItem.image}
+                        details={classItem.details}>
+                    </CardsView>
+                ))}
+            </div>
+            
         </div>
     );
 };

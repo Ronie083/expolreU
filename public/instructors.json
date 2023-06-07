@@ -6,16 +6,26 @@
         "email": "johnsmith@example.com",
         "numClassesTaken": 5,
         "classesTaken": "Photography Basics",
-        "numStudents": 50
+        "numStudents": 50,
+        "instructorQuotes": [
+            "Photography is the art of capturing moments and telling stories through images.",
+            "The best camera is the one you have with you.",
+            "Lighting is the key to creating stunning photographs."
+        ]
     },
     {
         "id": 2,
-        "image": "instructor2.jpg",
+        "image": "https://images.unsplash.com/photo-1512813498716-3e640fed3f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=424&q=80",
         "name": "Ava Rodriguez",
         "email": "avarodriguez@example.com",
         "numClassesTaken": 8,
         "classesTaken": "Mobile Photography",
-        "numStudents": 80
+        "numStudents": 80,
+        "instructorQuotes": [
+            "Every moment is an opportunity for a great photograph.",
+            "Don't be afraid to experiment and try new techniques.",
+            "Mobile photography allows you to capture beauty wherever you go."
+        ]
     },
     {
         "id": 3,
@@ -24,16 +34,26 @@
         "email": "michaelanderson@example.com",
         "numClassesTaken": 3,
         "classesTaken": "Landscape Photography",
-        "numStudents": 35
+        "numStudents": 35,
+        "instructorQuotes": [
+            "Landscape photography is about capturing the beauty of nature.",
+            "Patience and perseverance are essential for capturing the perfect landscape shot.",
+            "Take time to explore and find unique perspectives in the landscape."
+        ]
     },
     {
         "id": 4,
-        "image": "instructor4.jpg",
+        "image": "https://images.unsplash.com/photo-1521856729154-7118f7181af9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
         "name": "Sara Roberts",
         "email": "sararoberts@example.com",
         "numClassesTaken": 6,
         "classesTaken": "Street Photography",
-        "numStudents": 60
+        "numStudents": 60,
+        "instructorQuotes": [
+            "Street photography is about capturing the essence of everyday life.",
+            "The streets are full of stories waiting to be captured.",
+            "Embrace spontaneity and capture the decisive moments in street photography."
+        ]
     },
     {
         "id": 5,
@@ -42,16 +62,26 @@
         "email": "davidwilson@example.com",
         "numClassesTaken": 4,
         "classesTaken": "Product Photography",
-        "numStudents": 45
+        "numStudents": 45,
+        "instructorQuotes": [
+            "Product photography requires attention to detail and effective lighting.",
+            "Highlight the unique features of each product through photography.",
+            "Create images that make products stand out and capture attention."
+        ]
     },
     {
         "id": 6,
-        "image": "instructor6.jpg",
+        "image": "https://images.unsplash.com/photo-1603217400773-5f81a15f5541?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
         "name": "Emily Johnson",
         "email": "emilyjohnson@example.com",
         "numClassesTaken": 7,
         "classesTaken": "Portrait Photography",
-        "numStudents": 75
+        "numStudents": 75,
+        "instructorQuotes": [
+            "Portraits allow us to capture the essence and emotions of individuals.",
+            "Focus on creating a connection and capturing the true personality of your subject.",
+            "Experiment with different lighting and compositions to create stunning portraits."
+        ]
     },
     {
         "id": 7,
@@ -60,25 +90,40 @@
         "email": "danielmiller@example.com",
         "numClassesTaken": 2,
         "classesTaken": "Night Photography",
-        "numStudents": 25
+        "numStudents": 25,
+        "instructorQuotes": [
+            "Night photography reveals a different world after dark.",
+            "Master the art of long exposures and capture stunning nightscapes.",
+            "Embrace the challenges and unique opportunities that night photography offers."
+        ]
     },
     {
         "id": 8,
-        "image": "instructor8.jpg",
+        "image": "https://images.unsplash.com/photo-1559860812-bfa94746fb40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
         "name": "Sophia Thompson",
         "email": "sophiathompson@example.com",
         "numClassesTaken": 9,
         "classesTaken": "Fashion Photography",
-        "numStudents": 90
+        "numStudents": 90,
+        "instructorQuotes": [
+            "Fashion photography is about capturing style and expressing creativity.",
+            "Pay attention to fashion trends and bring your unique vision to the images.",
+            "Collaborate with stylists and models to create captivating fashion photographs."
+        ]
     },
     {
         "id": 9,
-        "image": "instructor9.jpg",
+        "image": "https://images.unsplash.com/photo-1559860812-fff7587b8ac3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
         "name": "Alexander Davis",
         "email": "alexanderdavis@example.com",
         "numClassesTaken": 5,
         "classesTaken": "Black and White Photography",
-        "numStudents": 55
+        "numStudents": 55,
+        "instructorQuotes": [
+            "Black and white photography emphasizes the beauty of light and shadow.",
+            "Focus on composition and tonal range to create impactful black and white images.",
+            "Explore the timeless elegance and storytelling potential of black and white photography."
+        ]
     },
     {
         "id": 10,
@@ -87,16 +132,26 @@
         "email": "oliviabrown@example.com",
         "numClassesTaken": 3,
         "classesTaken": "Travel Photography",
-        "numStudents": 40
+        "numStudents": 40,
+        "instructorQuotes": [
+            "Travel photography allows you to capture the beauty and diversity of the world.",
+            "Immerse yourself in the local culture and capture authentic moments.",
+            "Tell compelling stories through your travel photographs."
+        ]
     },
     {
         "id": 11,
-        "image": "instructor11.jpg",
+        "image": "https://images.unsplash.com/photo-1625492922105-5914617fd869?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80",
         "name": "William Garcia",
         "email": "williamgarcia@example.com",
         "numClassesTaken": 6,
         "classesTaken": "Food Photography",
-        "numStudents": 65
+        "numStudents": 65,
+        "instructorQuotes": [
+            "Food photography is about making food look as delicious as it tastes.",
+            "Pay attention to lighting, composition, and styling to create mouthwatering images.",
+            "Highlight the textures, colors, and details of food through photography."
+        ]
     },
     {
         "id": 12,
@@ -105,6 +160,11 @@
         "email": "jessicalee@example.com",
         "numClassesTaken": 4,
         "classesTaken": "Wildlife Photography",
-        "numStudents": 50
+        "numStudents": 50,
+        "instructorQuotes": [
+            "Wildlife photography requires patience, observation, and respect for nature.",
+            "Capture the beauty and behavior of animals in their natural habitats.",
+            "Learn about animal behavior and habitats to anticipate and capture unique moments."
+        ]
     }
 ]

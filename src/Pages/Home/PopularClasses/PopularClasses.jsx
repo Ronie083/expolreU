@@ -1,4 +1,5 @@
 import CardsView from "../../../Components/CardsView/CardsView";
+import Headings from "../../../Components/Headings/Headings";
 import useClasses from "../../../Hooks/useClasses";
 
 
@@ -9,10 +10,9 @@ const PopularClasses = () => {
 
     return (
         <div className="container mx-auto my-20">
-            <div className="font-bold text-center">
-                <p className="text-2xl" style={{ fontFamily: 'Pacifico, cursive' }}>welcome to our summer camp</p>
-                <h1 className="text-4xl my-3">Here is our Top Courses</h1>
-            </div>
+            <Headings
+            subHeading={"welcome to our summer camp"}
+            heading={"Here is our Top Courses"}></Headings>
             <div className="grid grid-cols-3 gap-4 justify-items-center mx-auto">
                 {popularClasses.map(classItem => (
                     <CardsView key={classItem.id}

@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "image": "class1.jpg",
+        "name": "Introduction to Photography",
+        "instructor": "John Smith",
+        "availableSeats": 10,
+        "price": 99.99,
+        "numberOfStudents": 15
+    },
+    {
+        "id": 2,
+        "image": "class2.jpg",
+        "name": "Portrait Photography",
+        "instructor": "Emily Johnson",
+        "availableSeats": 8,
+        "price": 129.99,
+        "numberOfStudents": 12
+    },
+    {
+        "id": 3,
+        "image": "class3.jpg",
+        "name": "Landscape Photography",
+        "instructor": "Michael Anderson",
+        "availableSeats": 12,
+        "price": 149.99,
+        "numberOfStudents": 20
+    },
+    {
+        "id": 4,
+        "image": "class4.jpg",
+        "name": "Street Photography",
+        "instructor": "Sara Roberts",
+        "availableSeats": 6,
+        "price": 89.99,
+        "numberOfStudents": 18
+    },
+    {
+        "id": 5,
+        "image": "class5.jpg",
+        "name": "Product Photography",
+        "instructor": "David Wilson",
+        "availableSeats": 4,
+        "price": 179.99,
+        "numberOfStudents": 14
+    },
+    {
+        "id": 6,
+        "image": "class6.jpg",
+        "name": "Wildlife Photography",
+        "instructor": "Jessica Lee",
+        "availableSeats": 10,
+        "price": 199.99,
+        "numberOfStudents": 16
+    },
+    {
+        "id": 7,
+        "image": "class7.jpg",
+        "name": "Night Photography",
+        "instructor": "Daniel Miller",
+        "availableSeats": 8,
+        "price": 129.99,
+        "numberOfStudents": 25
+    },
+    {
+        "id": 8,
+        "image": "class8.jpg",
+        "name": "Fashion Photography",
+        "instructor": "Sophia Thompson",
+        "availableSeats": 12,
+        "price": 149.99,
+        "numberOfStudents": 30
+    },
+    {
+        "id": 9,
+        "image": "class9.jpg",
+        "name": "Black and White Photography",
+        "instructor": "Alexander Davis",
+        "availableSeats": 6,
+        "price": 99.99,
+        "numberOfStudents": 22
+    },
+    {
+        "id": 10,
+        "image": "class10.jpg",
+        "name": "Travel Photography",
+        "instructor": "Olivia Brown",
+        "availableSeats": 4,
+        "price": 179.99,
+        "numberOfStudents": 16
+    },
+    {
+        "id": 11,
+        "image": "class11.jpg",
+        "name": "Food Photography",
+        "instructor": "William Garcia",
+        "availableSeats": 8,
+        "price": 129.99,
+        "numberOfStudents": 14
+    },
+    {
+        "id": 12,
+        "image": "class12.jpg",
+        "name": "Mobile Photography",
+        "instructor": "Ava Rodriguez",
+        "availableSeats": 10,
+        "price": 99.99,
+        "numberOfStudents": 18
+    }
+]

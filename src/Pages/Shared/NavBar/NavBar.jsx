@@ -4,7 +4,7 @@ import logo from "../../../assets/My project.png"
 
 const NavBar = () => {
     return (
-        <div className="container navbar bg-gray-800 text-white">
+        <div className="container navbar bg-gray-800 text-white sticky z-[1000]">
             <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -21,7 +21,7 @@ const NavBar = () => {
             </div>
             <div className="flex-1">
                 <div>
-                    <a className="btn btn-ghost text-xl"><img className="w-24 h-24" src={logo} alt="logo" />Explore-U</a>
+                    <a  href="/" className="btn btn-ghost md:text-xl"><img className="w-16 h-16 md:w-24 md:h-24" src={logo} alt="logo" />Explore-U</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -50,7 +50,8 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                    <Link to="login">Login</Link>
+                    {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         </div>
@@ -63,7 +64,7 @@ const NavBar = () => {
                         </li>
                         <li><a>PROFILE</a></li>
                         <li><a>LOG OUT</a></li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </div>

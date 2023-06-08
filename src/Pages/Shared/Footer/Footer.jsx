@@ -3,7 +3,7 @@ import logo from "../../../assets/ExploreU.png"
 
 const Footer = () => {
     return (
-        <div className="bg-gray-900 text-white mt-10">
+        <div className="bg-gray-900 text-white sticky z-[1000]">
             <footer className="footer footer-center p-10">
                 <div>
                     <img className="w-24 h-24 md:w-72 md:h-72 rounded-full" src={logo} alt="" />

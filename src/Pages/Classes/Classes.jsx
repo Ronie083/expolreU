@@ -9,7 +9,7 @@ const Classes = () => {
             <Headings
                 subHeading={'here is the all of'}
                 heading={"Our Courses"}></Headings>
-            <div className='grid grid-cols-3 gap-5 justify-items-center'>
+            <div className='grid md:grid-cols-3 gap-5 justify-items-center'>
                 {
                     classes.map(course => <CardsView key={course.id}
                         image={course.image}

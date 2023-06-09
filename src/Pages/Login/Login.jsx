@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsFacebook, BsFillEyeFill, BsFillEyeSlashFill, BsGoogle } from 'react-icons/bs';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -9,6 +12,11 @@ const Login = () => {
 
     const { login } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -20,8 +28,20 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true })
+                toast("Welcome!!! You Log-In Successfully",
+                    {
+                        position: "top-right",
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        theme: "dark",
+                        icon: "🚀"
+                    });
             })
-            .catch(error => console.log(error))
+            .catch(() => {
+                toast.error("Oops! Something went wrong. Please try again later.");
+            })
         form.reset();
     }
 
@@ -75,6 +95,7 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Login" />
+                            <ToastContainer />
                         </div>
                         <div className="mt-5">
                             <p>Don&apos;t have account!!! <Link className="text-lg font-semibold link link-info" to="/register"> Click Here </Link> to register</p>

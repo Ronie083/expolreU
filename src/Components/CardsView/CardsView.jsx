@@ -1,8 +1,25 @@
 import { useState } from "react";
 import "./CardsView.css";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CardsView = ({ image, name, instructor, availableSeats, price, numberOfStudents, details }) => {
     const [hovered, setHovered] = useState(false);
+    const { user } = useContext(AuthContext);
+
+    const isUserLoggedIn = !!user;
+
+    const enrollButton = availableSeats > 0 && !isUserLoggedIn ? "btn btn-outline bg-red-300" : "btn btn-outline";
+
+    const handleEnroll = () => {
+        if (!isUserLoggedIn) {
+            toast.error("Please log in to enroll.");
+        } else {
+            // Perform the enrollment logic
+        }
+    };
 
     const handleMouseEnter = () => {
         setHovered(true);
@@ -19,7 +36,7 @@ const CardsView = ({ image, name, instructor, availableSeats, price, numberOfStu
             className={`${cardClass} w-96 bg-base-100 shadow-xl my-10`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            >
+        >
             <div className="image-wrapper">
                 <figure style={{ height: '300px', overflow: 'hidden' }}>
                     <img src={image} alt="image" />
@@ -45,11 +62,8 @@ const CardsView = ({ image, name, instructor, availableSeats, price, numberOfStu
                 </div>
             </div>
             <div className="card-actions m-10">
-                {
-                    availableSeats > 0 && (
-                        <button className="btn btn-outline">Enroll</button>
-                    )
-                }
+                <button className={enrollButton} onClick={handleEnroll}>Enroll</button>
+                <ToastContainer />
             </div>
         </div>
     );

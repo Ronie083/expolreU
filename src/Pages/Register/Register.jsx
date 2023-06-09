@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { BsFacebook, BsGoogle } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { FcPlus } from "react-icons/fc";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,6 +12,7 @@ const Register = () => {
 
     const { createUser } = useContext(AuthContext);
     const [passwordAlert, setPasswordAlert] = useState("");
+    const navigate = useNavigate();
 
 
     const handleSignUp = event => {
@@ -43,9 +45,18 @@ const Register = () => {
                     photoURL: photoUrl,
                 })
                 console.log(user);
-                toast("Wow! You Sign-Up successfully")
+                toast("Wow! You Sign-Up successfully",
+                    {
+                        position: "top-right",
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        theme: "dark",
+                        icon: <FcPlus></FcPlus>
+                    });
+                navigate("/")
             })
-            .catch(error => toast(error));
+            .catch(error => toast(error.message));
         form.reset();
     };
 

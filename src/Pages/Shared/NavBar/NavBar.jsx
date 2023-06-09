@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/My project.png"
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
     return (
         <div className="container navbar bg-gray-800 text-white sticky z-[1000]">
             <div className="dropdown">
@@ -21,7 +26,7 @@ const NavBar = () => {
             </div>
             <div className="flex-1">
                 <div>
-                    <a  href="/" className="btn btn-ghost md:text-xl"><img className="w-16 h-16 md:w-24 md:h-24" src={logo} alt="logo" />Explore-U</a>
+                    <a href="/" className="btn btn-ghost md:text-xl"><img className="w-16 h-16 md:w-24 md:h-24" src={logo} alt="logo" />Explore-U</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -50,21 +55,34 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className="dropdown dropdown-end">
-                    <Link to="login">Login</Link>
-                    {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar md:mx-3" title={user?.displayName}> 
+                        {
+                            user?.email ? (
+                                <div className="w-10 rounded-full">
+                                    <img src={user.photoURL} />
+                                </div>
+                            ):(
+                                <Link to="login">Login</Link>
+                            )
+                        }
                     </label>
-                    <ul tabIndex={0} className="menu text-black menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a className="justify-between">
-                                DASHBOARD
-                            </a>
-                        </li>
-                        <li><a>PROFILE</a></li>
-                        <li><a>LOG OUT</a></li>
-                    </ul> */}
+                    {
+                        user?.email ? (
+                            <>
+                                <ul tabIndex={0} className="menu text-black menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li>
+                                        <a className="justify-between">
+                                            DASHBOARD
+                                        </a>
+                                    </li>
+                                    <li><a>PROFILE</a></li>
+                                    <li><a onClick={logOut}>LOG OUT</a></li>
+                                </ul>
+                            </>
+                        ) : (
+                            ''
+                        )
+                    }
                 </div>
             </div>
         </div>

@@ -1,28 +1,34 @@
 import { Link } from "react-router-dom";
-import { BsFacebook, BsGoogle } from 'react-icons/bs';
-import { useContext } from "react";
+import { BsFacebook, BsFillEyeFill, BsFillEyeSlashFill, BsGoogle } from 'react-icons/bs';
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 
 
 const Login = () => {
 
-    const {login} = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password);
+        console.log(email, password);
         login(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error => console.log(error))
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error))
         form.reset();
     }
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1562463224-b42508db43a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80)" }}>
             <div className="hero-content my-10">
@@ -42,7 +48,30 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                            <div className="relative">
+                                <input
+                                    type={showPassword ? "text" : "password"} // Toggle between "text" and "password" type based on showPassword state
+                                    name="password"
+                                    placeholder="password"
+                                    className="input input-bordered"
+                                    required
+                                />
+                                <span
+                                    className="absolute top-2 right-2 cursor-pointer"
+                                    onClick={togglePasswordVisibility}
+                                >
+                                    {showPassword ? (
+                                        // Show hide icon based on showPassword state
+                                        <>
+                                            <BsFillEyeSlashFill></BsFillEyeSlashFill>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <BsFillEyeFill></BsFillEyeFill>
+                                        </>
+                                    )}
+                                </span>
+                            </div>
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Login" />

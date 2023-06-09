@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { BsFacebook, BsGoogle } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext);
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -16,6 +20,14 @@ const Register = () => {
         const password = form.password.value;
 
         console.log(email, name, photoUrl, gender, phoneNumber, address, password);
+
+        createUser(email, password, photoUrl)
+            .then(result =>{
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.log(error))
+            form.reset();
     }
 
     return (
@@ -63,7 +75,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Phone Number</span>
                                 </label>
-                                <input type="number" name="phoneNumber" placeholder="phone number" className="input input-bordered" />
+                                <input type="tel" name="phoneNumber" placeholder="phone number" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">

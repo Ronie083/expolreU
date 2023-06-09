@@ -20,6 +20,8 @@ const Login = () => {
             const user = result.user;
             console.log(user);
         })
+        .catch(error => console.log(error))
+        form.reset();
     }
     return (
         <div className="hero min-h-screen" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1562463224-b42508db43a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80)" }}>

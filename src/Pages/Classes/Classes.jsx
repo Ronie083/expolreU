@@ -23,7 +23,9 @@ const Classes = () => {
                             availableSeats={course.availableSeats}
                             price={course.price}
                             numberOfStudents={course.numberOfStudents}
-                            details={course.details}></CardsView>)
+                            details={course.details}
+                            id={course._id}
+                            course={course}></CardsView>)
                     }
                 </div>
             </div>

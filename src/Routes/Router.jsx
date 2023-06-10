@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import NotPage from "../Pages/NotPage/NotPage";
+import Dashboard from "../Layout/Dashboard";
 
   export const router = createBrowserRouter([
     {
@@ -34,6 +35,15 @@ import NotPage from "../Pages/NotPage/NotPage";
         {
           path: "register",
           element: <Register></Register>
+        }
+      ]
+    },
+    {
+      path: "dashboard",
+      element: <Dashboard></Dashboard>,
+      children:[
+        {
+          
         }
       ]
     },

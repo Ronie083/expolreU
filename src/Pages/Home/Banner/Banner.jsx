@@ -10,6 +10,7 @@ import "./Banner.css"
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
+import { Link } from 'react-router-dom';
 
 
 const Banner = () => {
@@ -41,7 +42,7 @@ const Banner = () => {
                     <div className='text-black text-left absolute top-20 left-12  mb-3'>
                         <h1 className='text-3xl font-bold'>Unleash Your Inner <br /> Shutterbug</h1>
                         <p className='my-4'>Frame the World. Ignite Your Creativity. <br /> Unlock Your Photographic Potential. <br /> Learn Photography from the Experts. <br /> Unlock Your Photographic Potential. <br /> Enroll in Our Photography Program</p>
-                        <button className="btn btn-outline">Register Now</button>
+                        <Link to="register" className="btn btn-outline">Register Now</Link>
                     </div>
                     <img src="https://images.unsplash.com/photo-1457038770541-b6a1afae40f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="slide_image" />
                 </SwiperSlide>

@@ -8,6 +8,7 @@ import Classes from "../Pages/Classes/Classes";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import NotPage from "../Pages/NotPage/NotPage";
 
   export const router = createBrowserRouter([
     {
@@ -36,4 +37,8 @@ import PrivateRoute from "./PrivateRoute";
         }
       ]
     },
+    {
+      path: "*",
+      element: <NotPage></NotPage>
+    }
   ]);

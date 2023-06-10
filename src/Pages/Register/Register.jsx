@@ -10,9 +10,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, googleLogin, facebookLogin, loading } = useContext(AuthContext);
     const [passwordAlert, setPasswordAlert] = useState("");
     const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleSignUp = event => {
@@ -26,7 +28,6 @@ const Register = () => {
         const address = form.address.value;
         const password = form.password.value;
 
-        // Password conditions
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$&*]).{6,}$/;
         if (!passwordRegex.test(password)) {
             setPasswordAlert(
@@ -45,6 +46,7 @@ const Register = () => {
                     photoURL: photoUrl,
                 })
                 console.log(user);
+                loading(false)
                 toast("Wow! You Sign-Up successfully",
                     {
                         position: "top-right",
@@ -60,6 +62,16 @@ const Register = () => {
         form.reset();
     };
 
+    const handleLoginGoogle = () => {
+        googleLogin();
+        navigate(from, { replace: true });
+    };
+
+    const handleLoginFb = () => {
+        facebookLogin();
+        navigate(from, { replace: true });
+    }
+
 
     return (
         <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1614849427248-287c4e88ef58?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)" }}>
@@ -70,8 +82,8 @@ const Register = () => {
                         <img className="max-h-[350px]" src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80" alt="" />
                         <div className="text-center">
                             <p className="my-2 text-lg font-bold">You can also Sign Up with</p>
-                            <button className="btn btn-outline btn-error rounded-full"><BsGoogle></BsGoogle></button>
-                            <button className="ml-3 btn btn-outline btn-info rounded-full"><BsFacebook></BsFacebook></button>
+                            <button onClick={handleLoginGoogle} className="btn btn-outline btn-error rounded-full"><BsGoogle></BsGoogle></button>
+                            <button onClick={handleLoginFb} className="ml-3 btn btn-outline btn-info rounded-full"><BsFacebook></BsFacebook></button>
                         </div>
                     </div>
                 </div>

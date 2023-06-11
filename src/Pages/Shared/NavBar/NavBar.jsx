@@ -90,9 +90,9 @@ const NavBar = () => {
                             <>
                                 <ul tabIndex={0} className="menu text-black menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                     <li>
-                                        <a className="justify-between">
+                                        <Link to="dashboard" className="justify-between">
                                             DASHBOARD
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li><a>PROFILE</a></li>
                                     <li><a onClick={logOut}>LOG OUT</a></li>

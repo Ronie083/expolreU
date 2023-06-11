@@ -35,15 +35,10 @@ import Dashboard from "../Layout/Dashboard";
         {
           path: "register",
           element: <Register></Register>
-        }
-      ]
-    },
-    {
-      path: "dashboard",
-      element: <Dashboard></Dashboard>,
-      children:[
+        },
         {
-          
+          path: "dashboard",
+          element: <Dashboard></Dashboard>
         }
       ]
     },

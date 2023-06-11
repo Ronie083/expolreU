@@ -23,7 +23,7 @@ const CardsView = ({ _id, image, name, instructor, availableSeats, price, number
             navigate("/login")
         } else {
             console.log(enrolled);
-            const courseCart = {cartItemId: _id, name, image, price, email: user.email}
+            const courseCart = {cartItemId: _id, name, image, price, instructor, availableSeats, numberOfStudents, email: user.email}
             fetch('http://localhost:5000/enrolledCart', {
                 method: 'POST',
                 headers: {

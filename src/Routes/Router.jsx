@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import NotPage from "../Pages/NotPage/NotPage";
 import Dashboard from "../Layout/Dashboard";
 import CourseCart from "../Pages/Dashboard/CourseCart/CourseCart";
+import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 
   export const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ import CourseCart from "../Pages/Dashboard/CourseCart/CourseCart";
         {
           path: "coursecart",
           element: <CourseCart></CourseCart>
+        },
+        {
+          path: "manageuser",
+          element: <ManageUser></ManageUser>
         }
       ]
     },

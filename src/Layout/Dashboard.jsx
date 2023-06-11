@@ -1,10 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
-import { BsFillBookmarkStarFill, BsFillJournalBookmarkFill, BsHouseDownFill } from "react-icons/bs";
+import { BsClipboard2PlusFill, BsFillBookmarkStarFill, BsFillJournalBookmarkFill, BsHouseDownFill, BsPersonFillGear } from "react-icons/bs";
 import Footer from "../Pages/Shared/Footer/Footer";
 
 
 const Dashboard = () => {
+
+    const isAdmin = true;
+
     return (
         <div>
             <div>
@@ -19,9 +22,16 @@ const Dashboard = () => {
                     <div className="drawer-side">
                         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-                            <li><a><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill>Selected Course</a></li>
-                            <li><a><BsFillBookmarkStarFill></BsFillBookmarkStarFill>Enrolled Course</a></li>
-                            <li><a><BsHouseDownFill></BsHouseDownFill>Payment History</a></li>
+                            {
+                                isAdmin ? <>
+                                    <li><NavLink to={"/dashboard/dashclasses"}><BsClipboard2PlusFill></BsClipboard2PlusFill> Manage Classes</NavLink></li>
+                                    <li><NavLink to={"/dashboard/manageuser"}><BsPersonFillGear></BsPersonFillGear> Manage Users</NavLink></li>
+                                </> : <>
+                                    <li><NavLink to={"/dashboard/coursecart"}><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill>Selected Course</NavLink></li>
+                                    <li><NavLink to={"/dashboard/coursecart"}><BsFillBookmarkStarFill></BsFillBookmarkStarFill>Enrolled Course</NavLink></li>
+                                    <li><NavLink to={"/dashboard/payment"}><BsHouseDownFill></BsHouseDownFill>Payment History</NavLink></li>
+                                </>
+                            }
 
                         </ul>
 
@@ -29,7 +39,7 @@ const Dashboard = () => {
                 </div>
                 <Footer></Footer>
             </div>
-        </div>
+        </div >
     );
 };
 

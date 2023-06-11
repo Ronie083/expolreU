@@ -10,6 +10,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import NotPage from "../Pages/NotPage/NotPage";
 import Dashboard from "../Layout/Dashboard";
+import CourseCart from "../Pages/Dashboard/CourseCart/CourseCart";
 
   export const router = createBrowserRouter([
     {
@@ -35,10 +36,16 @@ import Dashboard from "../Layout/Dashboard";
         {
           path: "register",
           element: <Register></Register>
-        },
+        }
+      ]
+    },
+    {
+      path: "dashboard",
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      children: [
         {
-          path: "dashboard",
-          element: <Dashboard></Dashboard>
+          path: "coursecart",
+          element: <CourseCart></CourseCart>
         }
       ]
     },

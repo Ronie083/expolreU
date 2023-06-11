@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { createContext } from "react";
-import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut  } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { app } from "../../Firebase/firebase.config";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
+import { FcPlus } from "react-icons/fc";
 
 
 export const AuthContext = createContext(null);
@@ -18,7 +20,7 @@ const AuthProvider = ({ children }) => {
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
-            
+
     };
 
 
@@ -27,24 +29,46 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const googleLogin = () =>{
+    const googleLogin = () => {
         signInWithPopup(auth, googleProvider)
-        .then(result => {
-            const googleUser = result.user;
-            setLoading(true);
-            console.log(googleUser);
-        })
-        .catch(error => console.log(error.message))
+            .then(result => {
+                const googleUser = result.user;
+                const saveUser ={ email: googleUser.email, name: googleUser.displayName, photoURL: googleUser.photoURL}
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            toast("YAH!!! Your social sign in successfully",
+                                {
+                                    position: "top-right",
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    theme: "dark",
+                                    icon: <FcPlus></FcPlus>
+                                });
+                        }
+                    })
+                setLoading(true);
+                console.log(googleUser);
+            })
+            .catch(error => console.log(error.message))
     }
 
     const facebookLogin = () => {
         signInWithPopup(auth, facebookProvider)
-        .then(result => {
-            const fbUser = result.user;
-            setLoading(true);
-            console.log(fbUser);
-        })
-        .catch(error => console.log(error.message))
+            .then(result => {
+                const fbUser = result.user;
+                setLoading(true);
+                console.log(fbUser);
+            })
+            .catch(error => console.log(error.message))
     }
 
     const logOut = () => {

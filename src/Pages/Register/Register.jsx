@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
-    const { createUser, googleLogin, facebookLogin, loading } = useContext(AuthContext);
+    const { createUser, googleLogin, facebookLogin } = useContext(AuthContext);
     const [passwordAlert, setPasswordAlert] = useState("");
     const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ const Register = () => {
             return;
         }
 
-        console.log(email, name, photoUrl, gender, phoneNumber, address, password);
+        console.log(gender, phoneNumber, address);
 
         createUser(email, password, name, photoUrl)
             .then(result => {
@@ -45,18 +45,32 @@ const Register = () => {
                     displayName: name,
                     photoURL: photoUrl,
                 })
+                    .then(() => {
+                        const saveUser ={ email, name, photoUrl}
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type':'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    toast("Wow! You Sign-Up successfully",
+                                        {
+                                            position: "top-right",
+                                            closeOnClick: true,
+                                            pauseOnHover: true,
+                                            draggable: true,
+                                            theme: "dark",
+                                            icon: <FcPlus></FcPlus>
+                                        });
+                                    navigate("/")
+                                }
+                            })
+                    })
                 console.log(user);
-                loading(false)
-                toast("Wow! You Sign-Up successfully",
-                    {
-                        position: "top-right",
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        theme: "dark",
-                        icon: <FcPlus></FcPlus>
-                    });
-                navigate("/")
             })
             .catch(error => toast(error.message));
         form.reset();
@@ -82,8 +96,9 @@ const Register = () => {
                         <img className="max-h-[350px]" src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80" alt="" />
                         <div className="text-center">
                             <p className="my-2 text-lg font-bold">You can also Sign Up with</p>
-                            <button onClick={handleLoginGoogle} className="btn btn-outline btn-error rounded-full"><BsGoogle></BsGoogle></button>
-                            <button onClick={handleLoginFb} className="ml-3 btn btn-outline btn-info rounded-full"><BsFacebook></BsFacebook></button>
+                            <hr className="my-3" />
+                            <button onClick={handleLoginGoogle} className="btn btn-outline btn-error rounded-2xl"><BsGoogle></BsGoogle></button>
+                            <button onClick={handleLoginFb} className="ml-3 btn btn-outline btn-info rounded-2xl"><BsFacebook></BsFacebook></button>
                         </div>
                     </div>
                 </div>

@@ -1,86 +1,33 @@
-import Swal from "sweetalert2";
-import useEnrollCart from "../Hooks/useEnrollCart";
+import { Outlet } from "react-router-dom";
+import NavBar from "../Pages/Shared/NavBar/NavBar";
+import { BsFillBookmarkStarFill, BsFillJournalBookmarkFill, BsHouseDownFill } from "react-icons/bs";
+import Footer from "../Pages/Shared/Footer/Footer";
 
 
 const Dashboard = () => {
-    const [coursesCart, refetch] = useEnrollCart();
-
-
-
-
-    const handleDelete = (id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/enrolledCart/${id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            )
-                        }
-                    });
-            }
-        })
-    };
-
     return (
-        <div className="grid grid-cols-2">
-            <div className="overflow-x-auto">
-                <table className="table-md">
-                    <thead>
-                        <tr>
-                            <th>Course Overview</th>
-                            <th>Course Name</th>
-                            <th>Instructor</th>
-                            <th>Price</th>
-                            <th>Confirm</th>
-                            <th>Remove from Curt</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            coursesCart.map(coursCart =>
-                                <tr key={coursCart._id}>
-                                    <td>
-                                        <div className="flex items-center space-x-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
-                                                    <img src={coursCart.image} alt="Avatar Tailwind CSS Component" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">Number Of Students: {coursCart.numberOfStudents}</div>
-                                                <div className="font-bold">Available Seats: {coursCart.availableSeats}</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>{coursCart.name}</td>
-                                    <td>{coursCart.instructor}</td>
-                                    <td>$ {coursCart.price}</td>
-                                    <th>
-                                        <button className="btn btn-ghost btn-xs">Pay</button>
-                                    </th>
-                                    <th>
-                                        <button onClick={() => handleDelete(coursCart._id)} className="btn btn-ghost btn-xs">Delete</button>
-                                    </th>
-                                </tr>)
-                        }
-                    </tbody>
-                </table>
+        <div>
+            <div>
+                <NavBar></NavBar>
+                <div className="drawer lg:drawer-open">
+                    <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-content flex flex-col items-center justify-center">
+                        <Outlet></Outlet>
+                        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+
+                    </div>
+                    <div className="drawer-side">
+                        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+                        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                            <li><a><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill>Selected Course</a></li>
+                            <li><a><BsFillBookmarkStarFill></BsFillBookmarkStarFill>Enrolled Course</a></li>
+                            <li><a><BsHouseDownFill></BsHouseDownFill>Payment History</a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <Footer></Footer>
             </div>
         </div>
     );

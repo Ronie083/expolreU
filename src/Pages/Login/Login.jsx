@@ -113,8 +113,8 @@ const Login = () => {
                         </div>
                         <div className="text-center">
                             <p className="my-5 text-xl font-bold">You can also login with</p>
-                            <button onClick={handleLoginGoogle} className="btn btn-outline btn-error rounded-full"><BsGoogle></BsGoogle></button>
-                            <button onClick={handleLoginFb} className="ml-3 btn btn-outline btn-info rounded-full"><BsFacebook></BsFacebook></button>
+                            <button onClick={handleLoginGoogle} className="btn btn-outline btn-error rounded-2xl"><BsGoogle></BsGoogle></button>
+                            <button onClick={handleLoginFb} className="ml-3 btn btn-outline btn-info rounded-2xl"><BsFacebook></BsFacebook></button>
                         </div>
                     </form>
                 </div>

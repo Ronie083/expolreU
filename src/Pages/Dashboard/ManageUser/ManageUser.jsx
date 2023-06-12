@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { BsPersonSquare, BsPersonVideo3 } from "react-icons/bs";
+import { toast } from "react-toastify";
 
 
 
@@ -9,6 +10,33 @@ const ManageUser = () => {
         const res = await fetch('http://localhost:5000/users')
         return res.json();
     })
+
+    const handleAdminMaker = user => {
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch();
+                    toast(`From today ${user.name} is also Admin`)
+                }
+            })
+    }
+
+    const handleInstructorMaker = user => {
+        fetch(`http://localhost:5000/users/${user._id}`, {
+          method: 'PATCH',
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.modifiedCount) {
+              refetch();
+              toast(`From today ${user.name} is also an Instructor`);
+            }
+          });
+      };
+      
 
     return (
         <div className="overflow-x-auto">
@@ -39,11 +67,13 @@ const ManageUser = () => {
                             </td>
                             <th>
                                 {
-                                    user.role === 'admin' ? 'admin' : <button className="btn btn-ghost btn-lg"><BsPersonSquare></BsPersonSquare></button>
+                                    user.role === 'admin' ? 'admin' : <button onClick={() => handleAdminMaker(user)} className="btn btn-ghost btn-lg"><BsPersonSquare></BsPersonSquare></button>
                                 }
                             </th>
                             <th>
-                                <button className="btn btn-ghost btn-lg"><BsPersonVideo3></BsPersonVideo3></button>
+                                {
+                                    user.role === 'instructor' ? 'instructor' : <button onClick={() => handleInstructorMaker(user)} className="btn btn-ghost btn-lg"><BsPersonVideo3></BsPersonVideo3></button>
+                                }
                             </th>
                         </tr>)
                     }

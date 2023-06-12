@@ -22,7 +22,7 @@ const Register = () => {
         const form = event.target;
         const email = form.email.value;
         const name = form.name.value;
-        const photoUrl = form.photoUrl.value;
+        const photoURL = form.photoUrl.value;
         const gender = form.gender.value;
         const phoneNumber = form.phoneNumber.value;
         const address = form.address.value;
@@ -38,15 +38,15 @@ const Register = () => {
 
         console.log(gender, phoneNumber, address);
 
-        createUser(email, password, name, photoUrl)
+        createUser(email, password, name, photoURL)
             .then(result => {
                 const user = result.user;
                 updateProfile(user, {
                     displayName: name,
-                    photoURL: photoUrl,
+                    photoURL: photoURL,
                 })
                     .then(() => {
-                        const saveUser ={ email, name, photoUrl}
+                        const saveUser ={ email, name, photoURL}
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {

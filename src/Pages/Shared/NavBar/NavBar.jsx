@@ -8,15 +8,20 @@ import useEnrollCart from "../../../Hooks/useEnrollCart";
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext);
-    const [coursesCart] = useEnrollCart()
+    const [coursesCart, refetch] = useEnrollCart()
 
     const calculateSubtotal = (cartItems) => {
+        refetch()
+        if (!Array.isArray(cartItems) || cartItems.length === 0) {
+          return 0;
+        }
+      
         let subtotal = 0;
         cartItems.forEach((item) => {
-            subtotal += item.price;
+          subtotal += item.price;
         });
         return subtotal;
-    };
+      };
 
 
     return (

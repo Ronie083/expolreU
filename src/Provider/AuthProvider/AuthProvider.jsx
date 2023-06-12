@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { FcPlus } from "react-icons/fc";
 import axios from "axios";
 
-
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -24,7 +23,6 @@ const AuthProvider = ({ children }) => {
 
     };
 
-
     const login = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
@@ -34,7 +32,7 @@ const AuthProvider = ({ children }) => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 const googleUser = result.user;
-                const saveUser ={ email: googleUser.email, name: googleUser.displayName, photoURL: googleUser.photoURL}
+                const saveUser = { email: googleUser.email, name: googleUser.displayName, photoURL: googleUser.photoURL }
                 fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
@@ -81,16 +79,16 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             console.log('current user', currentUser)
-            if(currentUser){
+            if (currentUser) {
                 axios.post('http://localhost:5000/jwt', {
                     email: currentUser.email
                 })
-                .then(data => {
-                    console.log(data)
-                    localStorage.setItem('access-token', data.data.jwtToken)
-                })
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('access-token', data.data.jwtToken)
+                    })
             }
-            else{
+            else {
                 localStorage.removeItem('access-token')
             }
             setLoading(false);
@@ -118,3 +116,4 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
+

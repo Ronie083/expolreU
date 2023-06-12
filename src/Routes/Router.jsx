@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Instructors/Instructors";
@@ -13,49 +13,50 @@ import Dashboard from "../Layout/Dashboard";
 import CourseCart from "../Pages/Dashboard/CourseCart/CourseCart";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 
-  export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children:[
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-          path: "instructors",
-          element: <Instructors></Instructors>
-        },
-        {
-          path: "classes",
-          element: <PrivateRoute><Classes></Classes></PrivateRoute>
-        },
-        {
-          path: "login",
-          element: <Login></Login>
-        },
-        {
-          path: "register",
-          element: <Register></Register>
-        }
-      ]
-    },
-    {
-      path: "dashboard",
-      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-      children: [
-        {
-          path: "coursecart",
-          element: <CourseCart></CourseCart>
-        },
-        {
-          path: "manageuser",
-          element: <ManageUser></ManageUser>
-        }
-      ]
-    },
-    {
-      path: "*",
-      element: <NotPage></NotPage>
-    }
-  ]);
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/instructors",
+        element: <Instructors></Instructors>
+      },
+      {
+        path: "/classes",
+        element: <PrivateRoute><Classes></Classes></PrivateRoute>
+      },
+      {
+        path: "login",
+        element: <Login></Login>
+      },
+      {
+        path: "register",
+        element: <Register></Register>
+      }
+    ]
+  },
+  {
+    path: "/dashboard",
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    children: [
+      {
+        path: "coursecart",
+        element: <CourseCart></CourseCart>
+      },
+      {
+        path: "manageuser",
+        element: <ManageUser></ManageUser>
+      }
+    ]
+  },
+  {
+    path: "*",
+    element: <NotPage></NotPage>
+  }
+]);
+

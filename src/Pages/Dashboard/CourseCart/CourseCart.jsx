@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import useEnrollCart from "../../../Hooks/useEnrollCart";
+import { Link } from "react-router-dom";
 
 
 const CourseCart = () => {
@@ -17,7 +18,7 @@ const CourseCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/enrolledCart/${id}`, {
+                fetch(`https://explore-u-summer-camp-server.vercel.app/enrolledCart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -68,7 +69,7 @@ const CourseCart = () => {
                                 <td>{coursCart.instructor}</td>
                                 <td>$ {coursCart.price}</td>
                                 <th>
-                                    <button className="btn btn-ghost btn-xs">Pay</button>
+                                    <Link to={`/dashboard/payment/${coursCart._id}`} state={{coursCart}} className="btn btn-ghost btn-xs">Pay</Link>
                                 </th>
                                 <th>
                                     <button onClick={() => handleDelete(coursCart._id)} className="btn btn-ghost btn-xs">Delete</button>

@@ -12,6 +12,7 @@ import NotPage from "../Pages/NotPage/NotPage";
 import Dashboard from "../Layout/Dashboard";
 import CourseCart from "../Pages/Dashboard/CourseCart/CourseCart";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "manageuser",
         element: <ManageUser></ManageUser>
+      },
+      {
+        path: "payment/:id",
+        element: <Payment></Payment>
       }
     ]
   },

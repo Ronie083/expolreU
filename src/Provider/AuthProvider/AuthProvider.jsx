@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
             .then(result => {
                 const googleUser = result.user;
                 const saveUser = { email: googleUser.email, name: googleUser.displayName, photoURL: googleUser.photoURL }
-                fetch('http://localhost:5000/users', {
+                fetch('https://explore-u-summer-camp-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
                         }
                     })
                 setLoading(true);
-                console.log(googleUser);
+                // console.log(googleUser);
             })
             .catch(error => console.log(error.message))
     }
@@ -80,7 +80,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             console.log('current user', currentUser)
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', {
+                axios.post('https://explore-u-summer-camp-server.vercel.app/jwt', {
                     email: currentUser.email
                 })
                     .then(data => {

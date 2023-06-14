@@ -8,7 +8,7 @@ const useEnrollCart = () => {
     // console.log(token)
 
     const { refetch, data: coursesCart = [] } = useQuery(['coursesCart', user?.email], async () => {
-        const res = await fetch(`https://explore-u-summer-camp-server.vercel.app/enrolledCart?email=${user.email}`, {
+        const res = await fetch(`http://localhost:5000/enrolledCart?email=${user.email}`, {
             headers: {
                 authorization: `bearer ${token}`
             }

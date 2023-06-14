@@ -13,6 +13,7 @@ import Dashboard from "../Layout/Dashboard";
 import CourseCart from "../Pages/Dashboard/CourseCart/CourseCart";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
       {
         path: "payment/:id",
         element: <Payment></Payment>
+      },
+      {
+        path: "addclass",
+        element: <AddClass></AddClass>
       }
     ]
   },

@@ -18,7 +18,7 @@ const CourseCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://explore-u-summer-camp-server.vercel.app/enrolledCart/${id}`, {
+                fetch(`http://localhost:5000/enrolledCart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

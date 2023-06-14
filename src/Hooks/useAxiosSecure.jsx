@@ -10,7 +10,7 @@ const useAxiosSecure = () => {
   useEffect(() => {
     // Create an axios instance with a base URL
     const axiosInstance = axios.create({
-      baseURL: "https://explore-u-summer-camp-server.vercel.app/", // Replace with your base URL
+      baseURL: "http://localhost:5000/", // Replace with your base URL
     });
 
     // Intercept each request to inject the authorization header

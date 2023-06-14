@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
             .then(result => {
                 const googleUser = result.user;
                 const saveUser = { email: googleUser.email, name: googleUser.displayName, photoURL: googleUser.photoURL }
-                fetch('https://explore-u-summer-camp-server.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -80,7 +80,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             console.log('current user', currentUser)
             if (currentUser) {
-                axios.post('https://explore-u-summer-camp-server.vercel.app/jwt', {
+                axios.post('http://localhost:5000/jwt', {
                     email: currentUser.email
                 })
                     .then(data => {

@@ -24,7 +24,7 @@ const CardsView = ({ _id, image, name, instructor, availableSeats, price, number
         } else {
             console.log(enrolled);
             const courseCart = {cartItemId: _id, name, image, price, instructor, availableSeats, numberOfStudents, email: user.email}
-            fetch('https://explore-u-summer-camp-server.vercel.app/enrolledCart', {
+            fetch('http://localhost:5000/enrolledCart', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

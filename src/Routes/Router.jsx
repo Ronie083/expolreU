@@ -14,6 +14,7 @@ import CourseCart from "../Pages/Dashboard/CourseCart/CourseCart";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "manageuser",
         element: <ManageUser></ManageUser>
+      },
+      {
+        path: "manageclasses",
+        element: <ManageClasses></ManageClasses>
       },
       {
         path: "payment/:id",

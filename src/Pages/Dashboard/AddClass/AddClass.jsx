@@ -22,7 +22,7 @@ const AddClass = () => {
 
         console.log(name, email, photoURL, price, availableSeat, course)
 
-        const courseInfo = { newCourse: name, email, photoURL, availableSeat, course, courseStatus: "pending" }
+        const courseInfo = { name, email, photoURL, availableSeat, price, course, courseStatus: "pending" }
         fetch('http://localhost:5000/newCourse', {
             method: 'POST',
             headers: {

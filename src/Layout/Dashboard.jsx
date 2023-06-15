@@ -4,8 +4,8 @@ import { BsClipboard2PlusFill, BsFillBookmarkStarFill, BsFillJournalBookmarkFill
 import Footer from "../Pages/Shared/Footer/Footer";
 
 const Dashboard = () => {
-    const isAdmin = false;
-    const isInstructor = true;
+    const isAdmin = true;
+    const isInstructor = false;
 
     return (
         <div>
@@ -23,7 +23,7 @@ const Dashboard = () => {
                             {
                                 isAdmin ? (
                                     <div id="adminLayout">
-                                        <li><NavLink to={"/dashboard/coursecart"}><BsClipboard2PlusFill></BsClipboard2PlusFill> Manage Classes</NavLink></li>
+                                        <li><NavLink to={"/dashboard/manageclasses"}><BsClipboard2PlusFill></BsClipboard2PlusFill> Manage Classes</NavLink></li>
                                         <li><NavLink to={"/dashboard/manageuser"}><BsPersonFillGear></BsPersonFillGear> Manage Users</NavLink></li>
                                     </div>
                                 ) : (

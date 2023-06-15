@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ManageClasses = () => {
+
     const { data: newClasses = [], refetch } = useQuery(['newClasses'], async () => {
         const res = await fetch('http://localhost:5000/newCourse');
         return res.json();
@@ -24,13 +26,13 @@ const ManageClasses = () => {
         fetch(`http://localhost:5000/newCourse/${newClass._id}/deny`, {
             method: 'PATCH'
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.modifiedCount) {
-                toast('Class Denied');
-                refetch();
-            }
-        });
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    toast('Class Denied');
+                    refetch();
+                }
+            });
     };
 
     return (
@@ -40,7 +42,7 @@ const ManageClasses = () => {
                     <tr>
                         <th>Course Overview</th>
                         <th>Course Name</th>
-                        <th>Instructor</th>
+                        <th>Instructor&apos;s Info</th>
                         <th>Price</th>
                         <th>State</th>
                         <th>Confirm Class</th>
@@ -59,12 +61,16 @@ const ManageClasses = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="font-bold">Available Seats: {newClass.availableSeats}</div>
+                                        <div className="font-bold">Available Seats: {newClass.availableSeat}</div>
                                     </div>
                                 </div>
                             </td>
                             <td>{newClass.course}</td>
-                            <td>{newClass.newCourse}</td>
+                            <td>
+                                {newClass.newCourse}
+                                <br />
+                                <span className="badge badge-ghost badge-sm">{newClass.email}</span>
+                            </td>
                             <td>$ {newClass.price}</td>
                             <td>{newClass.courseStatus}</td>
                             <th>
@@ -86,7 +92,7 @@ const ManageClasses = () => {
                                 </button>
                             </th>
                             <th>
-                                <button className="btn btn-ghost btn-xs">Feedback</button>
+                                <Link to={`/dashboard/feedback/${newClass._id}`} className="btn btn-ghost btn-xs">Feedback</Link>
                             </th>
                         </tr>
                     ))}

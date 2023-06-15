@@ -10,7 +10,7 @@ const AddClass = () => {
     // console.log(user)
     const [, refetch] = useEnrollCart();
 
-    const handleSignUp = (event) => {
+    const handleAddClass = (event) => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
@@ -51,7 +51,7 @@ const AddClass = () => {
                     </div>
                     <div className="card w-full max-w-xl shadow-2xl bg-base-100">
                         <div className="card-body">
-                            <form onSubmit={handleSignUp} className=" grid grid-cols-2 gap-4">
+                            <form onSubmit={handleAddClass} className=" grid grid-cols-2 gap-4">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Class Name</span>

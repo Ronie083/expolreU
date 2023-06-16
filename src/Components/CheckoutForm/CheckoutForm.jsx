@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import "./CheckoutForm.css"; // Import your custom CSS styles
+// import "./CheckoutForm.css"; // Import your custom CSS styles
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useContext } from "react";

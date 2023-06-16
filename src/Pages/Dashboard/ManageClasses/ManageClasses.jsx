@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 
 const ManageClasses = () => {
 
+
     const { data: newClasses = [], refetch } = useQuery(['newClasses'], async () => {
         const res = await fetch('http://localhost:5000/newCourse');
         return res.json();
@@ -92,7 +93,14 @@ const ManageClasses = () => {
                                 </button>
                             </th>
                             <th>
-                                <Link to={`/dashboard/feedback/${newClass._id}`} className="btn btn-ghost btn-xs">Feedback</Link>
+                                <Link
+                                    to={`/dashboard/feedback/${newClass._id}`}
+                                    state={{newClass}}
+                                    className="btn btn-ghost btn-xs"
+                                    disabled={newClass.courseStatus === 'Approved'}
+                                >
+                                    Feedback
+                                </Link>
                             </th>
                         </tr>
                     ))}

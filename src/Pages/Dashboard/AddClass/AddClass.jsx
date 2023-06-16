@@ -33,7 +33,7 @@ const AddClass = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    toast("Your course successfully added to cart")
+                    toast("Your course in pending, a admin will consider it very soon!!!")
                     refetch();
                 }
             })

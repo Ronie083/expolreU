@@ -4,8 +4,8 @@ import { BsClipboard2PlusFill, BsFillBookmarkStarFill, BsFillJournalBookmarkFill
 import Footer from "../Pages/Shared/Footer/Footer";
 
 const Dashboard = () => {
-    const isAdmin = true;
-    const isInstructor = false;
+    const isAdmin = false;
+    const isInstructor = true;
 
     return (
         <div>

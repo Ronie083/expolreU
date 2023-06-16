@@ -15,7 +15,7 @@ import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
-import Feedback from "../Pages/Dashboard/ManageClasses/Feedback";
+import FeedbackSend from "../Pages/Dashboard/FeedbackSend/FeedbackSend";
 
 export const router = createBrowserRouter([
   {
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "feedback/:id",
-        element: <Feedback></Feedback>
+        element: <FeedbackSend></FeedbackSend>
       },
       {
         path: "payment/:id",

@@ -2,10 +2,26 @@ import { NavLink, Outlet } from "react-router-dom";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 import { BsClipboard2PlusFill, BsFillBookmarkStarFill, BsFillJournalBookmarkFill, BsHouseDownFill, BsPersonFillGear } from "react-icons/bs";
 import Footer from "../Pages/Shared/Footer/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
 
 const Dashboard = () => {
-    const isAdmin = false;
-    const isInstructor = true;
+    const {user} = useContext(AuthContext);
+    const mail = user.email;
+    
+    const { data: dbUsers = [] } = useQuery(['user'], async () => {
+        const res = await fetch('http://localhost:5000/users');
+        return res.json();
+    });
+
+    const dbUserMail = dbUsers.filter((dbUser) => dbUser.email === mail);
+
+    console.log(dbUserMail)
+    
+    const isAdmin = dbUserMail[0]?.role === 'admin';
+    const isInstructor = dbUserMail[0]?.role === 'instructor';
+    
 
     return (
         <div>

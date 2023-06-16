@@ -6,12 +6,12 @@ const ManageClasses = () => {
 
 
     const { data: newClasses = [], refetch } = useQuery(['newClasses'], async () => {
-        const res = await fetch('http://localhost:5000/newCourse');
+        const res = await fetch('https://explore-u-summer-camp-server.vercel.app/newCourse');
         return res.json();
     });
 
     const handleApprove = (newClass) => {
-        fetch(`http://localhost:5000/newCourse/${newClass._id}/approve`, {
+        fetch(`https://explore-u-summer-camp-server.vercel.app/newCourse/${newClass._id}/approve`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const ManageClasses = () => {
     };
 
     const handleDeny = (newClass) => {
-        fetch(`http://localhost:5000/newCourse/${newClass._id}/deny`, {
+        fetch(`https://explore-u-summer-camp-server.vercel.app/newCourse/${newClass._id}/deny`, {
             method: 'PATCH'
         })
             .then(res => res.json())

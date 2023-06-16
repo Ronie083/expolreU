@@ -16,7 +16,7 @@ const useAdmin = () => {
                     }
                 };
 
-                const res = await axios.get(`http://localhost:5000/users/admin/${user.email}`, config);
+                const res = await axios.get(`https://explore-u-summer-camp-server.vercel.app/users/admin/${user.email}`, config);
                 setIsAdmin(res.data);
             } catch (error) {
                 console.log(error);

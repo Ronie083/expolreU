@@ -4,7 +4,7 @@ import Headings from "../../../Components/Headings/Headings";
 
 const MyClasses = () => {
     const { data: newClasses = [] } = useQuery(['newClasses'], async () => {
-        const res = await fetch('http://localhost:5000/newCourse');
+        const res = await fetch('https://explore-u-summer-camp-server.vercel.app/newCourse');
         return res.json();
     });
 

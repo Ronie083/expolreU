@@ -15,7 +15,7 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/usersSingle/${user.email}`)
+        fetch(`https://explore-u-summer-camp-server.vercel.app/usersSingle/${user.email}`)
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [user.email])

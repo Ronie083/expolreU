@@ -15,7 +15,7 @@ const FeedbackSend = () => {
 
         console.log(feedback);
 
-        fetch(`http://localhost:5000/newCourse/${id}/feedback`, {
+        fetch(`https://explore-u-summer-camp-server.vercel.app/newCourse/${id}/feedback`, {
             method: "PATCH",
             body: JSON.stringify({ feedback }),
             headers: {

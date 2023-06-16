@@ -18,7 +18,7 @@ const CheckoutForm = ({ price }) => {
         }
         const fetchPaymentIntent = async () => {
             try {
-                const response = await axios.post('http://localhost:5000/create-payment-intent', { price }, {
+                const response = await axios.post('https://explore-u-summer-camp-server.vercel.app/create-payment-intent', { price }, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 const data = response.data;

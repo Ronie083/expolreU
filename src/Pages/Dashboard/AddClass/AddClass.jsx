@@ -23,7 +23,7 @@ const AddClass = () => {
         console.log(name, email, photoURL, price, availableSeat, course)
 
         const courseInfo = { name, email, photoURL, availableSeat, price, course, courseStatus: "pending" }
-        fetch('http://localhost:5000/newCourse', {
+        fetch('https://explore-u-summer-camp-server.vercel.app/newCourse', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -30,7 +30,7 @@ const Dashboard = () => {
                                     isInstructor ? (
                                         <div id="instructorLayout">
                                             <li><NavLink to={"/dashboard/addclass"}><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill>Add Class</NavLink></li>
-                                            <li><NavLink to={"/dashboard/courseenrolled"}><BsFillBookmarkStarFill></BsFillBookmarkStarFill>My Class</NavLink></li>
+                                            <li><NavLink to={"/dashboard/myclasses"}><BsFillBookmarkStarFill></BsFillBookmarkStarFill>My Class</NavLink></li>
                                         </div>
                                     ) : (
                                         <div id="studentLayout">

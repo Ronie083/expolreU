@@ -4,24 +4,24 @@ import { BsClipboard2PlusFill, BsFillBookmarkStarFill, BsFillJournalBookmarkFill
 import Footer from "../Pages/Shared/Footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
-import { useQuery } from "@tanstack/react-query";
+
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Dashboard = () => {
-    const {user} = useContext(AuthContext);
-    const mail = user.email;
-    
-    const { data: dbUsers = [] } = useQuery(['user'], async () => {
-        const res = await fetch('http://localhost:5000/users');
-        return res.json();
-    });
+    const { user } = useContext(AuthContext);
+    const [users, setUsers] = useState({})
+    console.log('from de', user.email);
 
-    const dbUserMail = dbUsers.filter((dbUser) => dbUser.email === mail);
 
-    console.log(dbUserMail)
-    
-    const isAdmin = dbUserMail[0]?.role === 'admin';
-    const isInstructor = dbUserMail[0]?.role === 'instructor';
-    
+    useEffect(() => {
+        fetch(`http://localhost:5000/usersSingle/${user.email}`)
+            .then(res => res.json())
+            .then(data => setUsers(data))
+    }, [user.email])
+
+
+
 
     return (
         <div>
@@ -36,27 +36,54 @@ const Dashboard = () => {
                     <div className="drawer-side">
                         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-                            {
-                                isAdmin ? (
-                                    <div id="adminLayout">
-                                        <li><NavLink to={"/dashboard/manageclasses"}><BsClipboard2PlusFill></BsClipboard2PlusFill> Manage Classes</NavLink></li>
-                                        <li><NavLink to={"/dashboard/manageuser"}><BsPersonFillGear></BsPersonFillGear> Manage Users</NavLink></li>
+
+                            {users?.role === 'admin' ? (
+                                <div id="adminLayout">
+                                    <li>
+                                        <NavLink to="/dashboard/manageclasses">
+                                            <BsClipboard2PlusFill /> Manage Classes
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/manageuser">
+                                            <BsPersonFillGear /> Manage Users
+                                        </NavLink>
+                                    </li>
+                                </div>
+                            ) : (
+                                users?.role === 'instructor' ? (
+                                    <div id="instructorLayout">
+                                        <li>
+                                            <NavLink to="/dashboard/addclass">
+                                                <BsFillJournalBookmarkFill /> Add Class
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/dashboard/myclasses">
+                                                <BsFillBookmarkStarFill /> My Class
+                                            </NavLink>
+                                        </li>
                                     </div>
                                 ) : (
-                                    isInstructor ? (
-                                        <div id="instructorLayout">
-                                            <li><NavLink to={"/dashboard/addclass"}><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill>Add Class</NavLink></li>
-                                            <li><NavLink to={"/dashboard/myclasses"}><BsFillBookmarkStarFill></BsFillBookmarkStarFill>My Class</NavLink></li>
-                                        </div>
-                                    ) : (
-                                        <div id="studentLayout">
-                                            <li><NavLink to={"/dashboard/coursecart"}><BsFillJournalBookmarkFill></BsFillJournalBookmarkFill>Selected Course</NavLink></li>
-                                            <li><NavLink to={"/dashboard/courseenrolled"}><BsFillBookmarkStarFill></BsFillBookmarkStarFill>Enrolled Course</NavLink></li>
-                                            <li><NavLink to={"/dashboard/paymenthistory"}><BsHouseDownFill></BsHouseDownFill>Payment History</NavLink></li>
-                                        </div>
-                                    )
+                                    <div id="studentLayout">
+                                        <li>
+                                            <NavLink to="/dashboard/coursecart">
+                                                <BsFillJournalBookmarkFill /> Selected Course
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/dashboard/courseenrolled">
+                                                <BsFillBookmarkStarFill /> Enrolled Course
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/dashboard/paymenthistory">
+                                                <BsHouseDownFill /> Payment History
+                                            </NavLink>
+                                        </li>
+                                    </div>
                                 )
-                            }
+                            )}
                         </ul>
                     </div>
                 </div>

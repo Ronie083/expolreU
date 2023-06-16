@@ -11,13 +11,13 @@ const MyClasses = () => {
     console.log(newClasses)
 
     return (
-        <div>
+        <div className="my-20">
             <Headings
                 subHeading={"here is all the added"}
                 heading={"Class by you"}></Headings>
             <div className=" grid grid-cols-2 gap-8 mx-10">
                 {
-                    newClasses.map(newClass => <div key={newClass._id} className="card w-96 shadow-xl">
+                    newClasses.map(newClass => <div key={newClass._id} className="card w-96 shadow-xl bg-red-100 mt-5">
                         <div className="card-body">
                             <h2 className="card-title">{newClass.course}
                                 <div className="badge badge-secondary">{newClass.courseStatus}</div></h2>

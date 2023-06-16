@@ -13,13 +13,13 @@ const CheckoutForm = ({ price }) => {
     const token = localStorage.getItem('access-token')
 
     useEffect(() => {
-        if (!price || !token){
+        if (!price || !token) {
             return
         }
         const fetchPaymentIntent = async () => {
             try {
-                const response = await axios.post('http://localhost:5000/create-payment-intent', { price },{
-                    headers: {Authorization: `Bearer ${token}`}
+                const response = await axios.post('http://localhost:5000/create-payment-intent', { price }, {
+                    headers: { Authorization: `Bearer ${token}` }
                 });
                 const data = response.data;
                 setClientSecret(data.clientSecret);
@@ -66,7 +66,7 @@ const CheckoutForm = ({ price }) => {
         },
         );
 
-        if(confirmError){
+        if (confirmError) {
             console.log(confirmError);
         }
 
@@ -99,7 +99,7 @@ const CheckoutForm = ({ price }) => {
                             }}
                         />
                     </div>
-                    <button type="submit" disabled={!stripe || !clientSecret}>
+                    <button className="btn btn-neutral" type="submit" disabled={!stripe || !clientSecret}>
                         Pay
                     </button>
                 </form>

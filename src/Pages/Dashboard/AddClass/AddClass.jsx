@@ -7,7 +7,7 @@ import useEnrollCart from "../../../Hooks/useEnrollCart";
 const AddClass = () => {
 
     const { user } = useContext(AuthContext);
-    // console.log(user)
+
     const [, refetch] = useEnrollCart();
 
     const handleAddClass = (event) => {
@@ -35,6 +35,7 @@ const AddClass = () => {
                 if (data.insertedId) {
                     toast("Your course in pending, a admin will consider it very soon!!!")
                     refetch();
+                    form.reset();
                 }
             })
     }

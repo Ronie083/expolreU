@@ -15,12 +15,12 @@ The classes page presents all approved classes, featuring images, names, instruc
 
 ## Technology Used
 The Explore-U website is built using the following technologies and packages:
-- ## React**: A JavaScript library for building user interfaces.
-- ## React** Router: A library for routing and navigation within a React application.
-- ## React Query**: A library for data fetching and state management in React applications.
-- ## Axios**: A popular HTTP client for making API requests.
-- ## React Hook Form**: A library for building flexible and performant forms in React.
-- ## JWT Token**: JSON Web Tokens are used for secure authentication and authorization.
+- ## **React**: A JavaScript library for building user interfaces.
+- ## **React** Router: A library for routing and navigation within a React application.
+- ## **React Query**: A library for data fetching and state management in React applications.
+- ## **Axios**: A popular HTTP client for making API requests.
+- ## **React Hook Form**: A library for building flexible and performant forms in React.
+- ## **JWT Token**: JSON Web Tokens are used for secure authentication and authorization.
 
 # Live Site
 Explore-U is live and accessible at ## https://explore-u-summer-camp.web.app/ ..

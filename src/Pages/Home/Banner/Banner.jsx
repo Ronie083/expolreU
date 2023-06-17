@@ -4,16 +4,18 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import "./Banner.css"
-
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../Home/Home';
 
 
 const Banner = () => {
+
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
     return (
         <div>
 

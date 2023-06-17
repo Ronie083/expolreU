@@ -1,8 +1,13 @@
 import { FcGraduationCap, FcAssistant, FcFilm } from "react-icons/fc";
 import anime from 'animejs/lib/anime.es.js';
 import { useState } from "react";
+import { ThemeContext } from "../Home/Home";
+import { useContext } from "react";
 
 const Benefits = () => {
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   const [animationTriggered, setAnimationTriggered] = useState(false);
 
   const handleClick = () => {

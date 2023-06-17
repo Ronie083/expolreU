@@ -1,10 +1,15 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../Pages/Home/Home/Home";
 
 
 const Headings = ({heading, subHeading}) => {
+    
+    const {theme, setTheme} = useContext(ThemeContext);
+
     return (
         <div className="font-bold text-center">
-            <p className="text-2xl" style={{ fontFamily: 'Pacifico, cursive' }}>{subHeading}</p>
-            <h1 className="text-4xl my-3">{heading}</h1>
+            <h6 className="text-2xl" style={{ fontFamily: 'Pacifico, cursive' }}>{subHeading}</h6>
+            <h5 className="text-4xl my-3">{heading}</h5>
         </div>
     );
 };

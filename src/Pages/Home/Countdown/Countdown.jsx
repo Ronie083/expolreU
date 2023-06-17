@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { useEffect, useState } from "react";
+import { ThemeContext } from "../Home/Home";
 
 
 const Countdown = () => {
+
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
     const [countdown, setCountdown] = useState({
         days: 15,
         hours: 10,
@@ -51,7 +56,7 @@ const Countdown = () => {
     return (
         <div className="md:flex md:justify-between md:items-center px-20 md:px-36 bg-[#8B9232] py-10">
             <div className="font-bold">
-                <p  style={{ fontFamily: 'Pacifico, cursive'}}>until first session</p>
+                <p style={{ fontFamily: 'Pacifico, cursive' }}>until first session</p>
                 <h1 className="text-3xl my-3">Don&apos;t Miss the First Day!</h1>
             </div>
             <div className="grid grid-cols-2 md:grid-flow-col gap-5 text-center auto-cols-max">

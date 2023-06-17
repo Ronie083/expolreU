@@ -1,0 +1,31 @@
+#light {
+    background-color: #f3ebf6;
+}
+
+#dark {
+    background-color: #46045e;
+}
+
+#dark #makeWhite h1{
+    color: red;
+}
+
+#toggleSwitch {
+    display: flex;
+    justify-content: end;
+    padding: 10px 10px;
+}
+
+#light #toggleSwitch label{
+    color: black;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#dark #toggleSwitch label{
+    color: white;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
